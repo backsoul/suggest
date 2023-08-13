@@ -1,0 +1,13 @@
+.image-suggest:hover{
+    filter: brightness(.9);
+    cursor: pointer;
+    transform: scale(1.5);
+    border-radius: 1rem;
+    transition: .2s all;
+    z-index: 9999;
+}
+
+.image-suggest:focus{
+    filter: brightness(.3);
+    transition: .2s all;
+}

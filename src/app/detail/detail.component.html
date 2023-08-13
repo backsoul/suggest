@@ -1,0 +1,70 @@
+<div style="width: 100%;
+height: 100%;
+margin: 0px;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;">
+    <div [ngStyle]="changeBackground()" style="
+    width: 100vw;
+    height: inherit;
+    z-index: -1;
+    position: absolute;
+    filter: blur(1px);
+    filter: grayscale(.7);
+    overflow: hidden;filter: opacity(0.2);"></div>
+    <div
+        style="width: 100%; height: 95vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <h1 style="    cursor: pointer;
+        font-weight: 400;
+        font-family: sans-serif;
+        color: #c3c3c3;" (click)="goToHome()">Backsoul Suggests</h1>
+        <div style="width: 90%; display: flex; justify-content: center; align-items: center;" *ngIf="getProduct" style="/* From https://css.glass */
+        background: white;
+        border-radius: 16px;box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); width: 50%;">
+            <div style="display: flex;gap: 1rem;">
+                <img [src]="getProduct.image" alt="" style="border-radius:16px 0px 0px 16px;">
+                <div style="padding: 1rem;">
+                    <h1 style="color: #919191;
+                    font-family: sans-serif;
+                    font-weight: 500;">{{getProduct.name}}</h1>
+                    <h3 style="    color: #d3d3d3;
+                    font-family: sans-serif;
+                    font-weight: 500;">{{getProduct.brand}}</h3>
+                    <p style="    color: #d3d3d3;
+                    font-family: sans-serif;
+                    font-weight: 500;">size {{getProduct.size}}</p>
+                    <p style="font-weight: 300;
+                    font-family: system-ui;
+                    color: #adadad;">
+                        Descubre el equilibrio perfecto entre estilo y rendimiento con nuestro innovador zapato
+                        deportivo. Diseñado para aquellos que buscan la excelencia en cada paso, este calzado combina a
+                        la perfección la última tecnología en materiales y diseño.
+
+                        Con una parte superior de malla transpirable, este zapato asegura una ventilación óptima,
+                        manteniendo tus pies frescos y cómodos incluso en los momentos más intensos de tu entrenamiento.
+                        Su estructura ligera no compromete la durabilidad, brindando un soporte fiable para tus
+                        actividades físicas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="    display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.29);
+        border-radius: 16px;
+        
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        transition: .5s all;">
+            <div *ngFor="let product of products;" (click)="goToDetail(product.product.name)"
+                style=" transition: .5s all;">
+                <img [src]="product.product.image" alt="" style="width: 6rem; transition: .5s all; border-radius: 1rem;"
+                    class="image-suggest">
+            </div>
+        </div>
+    </div>
+</div>
