@@ -14,7 +14,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this.httpClient
-      .get('https://backend-suggest-jmn5bhj2y-backsoul.vercel.app/products')
+      .get('https://backend-suggest-fb44ddff80b0.herokuapp.com/products')
       .subscribe((res: any) => {
         this.products = res;
       });

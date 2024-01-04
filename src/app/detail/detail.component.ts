@@ -35,7 +35,7 @@ export class DetailComponent {
     }
     this.httpClient
       .get(
-        'https://backend-suggest-jmn5bhj2y-backsoul.vercel.app/product/' +
+        'https://backend-suggest-fb44ddff80b0.herokuapp.com/product/' +
           this.nameProduct
       )
       .subscribe((res: any) => {
@@ -46,7 +46,7 @@ export class DetailComponent {
       });
     this.httpClient
       .get(
-        'https://backend-suggest-jmn5bhj2y-backsoul.vercel.app/recomendar/' +
+        'https://backend-suggest-fb44ddff80b0.herokuapp.com/recomendar/' +
           this.nameProduct
       )
       .subscribe((res: any) => {
